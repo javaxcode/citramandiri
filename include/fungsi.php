@@ -1,7 +1,7 @@
 <?php
 
 //koneksi database
-$conn = mysqli_connect('localhost', 'root', '', 'skutrs_srs');
+$conn = mysqli_connect('localhost', 'root', '', 'citramandiri');
 // if (!$conn) {
 //     die("Koneksi gagal: " . mysqli_connect_error());
 // }
