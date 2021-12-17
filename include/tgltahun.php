@@ -1,7 +1,7 @@
 <div class="dropdown pull-centre">
     <div class="col-md-4">
         <select class="form-control input-sm" id="bulan" name="bulan">
-            <option value="<?=$month?>"><?=date('M')?></option>
+            <option value="<?= $month ?>"><?= date('M') ?></option>
             <option value="00">Semua</option>
             <option value="01">Jan</option>
             <option value="02">Feb</option>
@@ -21,19 +21,19 @@
 <div class="dropdown pull-centre">
     <div class="col-md-4">
         <select class="form-control input-sm" id="tahun" name="tahun">
-            <!-- <option value="<?=$year?>"><?=date('Y')?></option> -->
-            <!-- <option value="00">Semua</option> -->
+            <option value="<?= $year ?>"><?= date('Y') ?></option>
+            <option value="00">Semua</option>
 
             <?php
-$tahunpertama = 2019;
-$tahunSekarang = date('Y');
-$jt = ($tahunSekarang - $tahunpertama) + 1;
-$tg_awal = date('Y') - $jt;
-$tg_akhir = date('Y');
-?>
-            <?php for ($i = $tg_akhir; $i >= $tg_awal; $i--): ?>
-            <option><?=$i?></option>
-            <?php endfor;?>
+            $tahunpertama = 2019;
+            $tahunSekarang = date('Y');
+            $jt = ($tahunSekarang - $tahunpertama) + 1;
+            $tg_awal = date('Y') - $jt;
+            $tg_akhir = date('Y');
+            ?>
+            <?php for ($i = $tg_akhir; $i >= $tg_awal; $i--) : ?>
+                <option><?= $i ?></option>
+            <?php endfor; ?>
         </select>
     </div>
 </div>

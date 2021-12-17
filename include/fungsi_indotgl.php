@@ -51,7 +51,8 @@ function tgl_indo2($tgl){
 		$tanggal = substr($tgl,8,2);
 		$bulan = getBulan2(substr($tgl,5,2));
 		$tahun = substr($tgl,0,4);
-		return $tanggal.'-'.$bulan.'-'.$tahun;		 
+		// return $tanggal.'-'.$bulan.'-'.$tahun;		 
+		return $tanggal.'/'.$bulan.'/'.$tahun;		 
 }	
 
 function getBulan2($bln){
@@ -93,5 +94,4 @@ function getBulan2($bln){
 			return "12";
 			break;
 	}
-}  
-?>
+}
