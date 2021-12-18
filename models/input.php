@@ -496,8 +496,8 @@ if (isset($_POST['kasmasuk'])) {
     echo ($isSuccess) ? 3 : 1;
 } else if (isset($_POST['inputgaji'])) {
     $prevMonth = date('n', strtotime('-1 months'));
-    
-    if($prevMonth == '12') {
+
+    if ($prevMonth == '12') {
         $yearNow = date('Y') - 1;
     } else {
         $yearNow = date('Y');
@@ -512,7 +512,7 @@ if (isset($_POST['kasmasuk'])) {
 
     $checkGaji = query("SELECT * FROM gaji WHERE month(tanggal) = '$monthNow' AND year(tanggal) = '$yearNow'");
 
-    if(count($checkGaji) > 0) {
+    if (count($checkGaji) > 0) {
         echo 1;
     } else {
         foreach ($karyawans as $karyawan) {
@@ -531,22 +531,22 @@ if (isset($_POST['kasmasuk'])) {
 
             $hadir = query("SELECT * FROM absensi WHERE month(tanggal) = '$prevMonth' AND nip = '$nip' AND hadir = '1'");
             $totalhadir = count($hadir);
-        
+
             $sakit = query("SELECT * FROM absensi WHERE month(tanggal) = '$prevMonth' AND nip = '$nip' AND sakit = '1'");
             $totalsakit = count($sakit);
-        
+
             $ijin = query("SELECT * FROM absensi WHERE month(tanggal) = '$prevMonth' AND nip = '$nip' AND ijin = '1'");
             $totalijin = count($ijin);
-        
+
             $alfa = query("SELECT * FROM absensi WHERE month(tanggal) = '$prevMonth' AND nip = '$nip' AND alfa = '1'");
             $totalalfa = count($alfa);
-        
+
             // hitung gaji per hari
             $gajiperhari = round($gaji / $jumHari);
-        
+
             // hitung 50% gaji per hari
             $potongangaji = round($gajiperhari / 2);
-        
+
             // hitung total gaji
             $totalgaji = ($gajiperhari * $totalhadir) - ($potongangaji * $totalijin) - ($potongangaji * $totalsakit) - ($gajiperhari * $totalalfa);
 
@@ -556,7 +556,7 @@ if (isset($_POST['kasmasuk'])) {
 
             $statuskaryawan = $karyawan['status'];
             $tanggungan = $karyawan['tanggungan'];
-        
+
             // cek status pernikahan, untuk menghitung penghasilan tidak kena pajak
             if ($statuskaryawan == 0) {
                 if ($tanggungan == 0) {
@@ -579,14 +579,14 @@ if (isset($_POST['kasmasuk'])) {
                     $ptkp = 72000000;
                 }
             }
-        
+
             // 5% dari total gaji
             $biayajabatan = ($totalgaji * 5) / 100;
-        
+
             $gajiBersihPPH = $totalgaji - ($biayajabatan + $karyawan['bpjs']);
-        
+
             $gajiBersihPPH1tahun = $gajiBersihPPH * 12;
-        
+
             if ($gajiBersihPPH1tahun > $ptkp) {
                 $pkp = $gajiBersihPPH1tahun - $ptkp;
                 $PPH21Setahun = ($pkp * 5) / 100;
@@ -594,12 +594,68 @@ if (isset($_POST['kasmasuk'])) {
             } elseif ($gajiBersihPPH1tahun < $ptkp) {
                 $PPH21Bulanini = 0;
             }
-        
+
             $queryGaji = "INSERT INTO gaji (id, tanggal, kodeabs, nama, nip, keterangan, gp, tjabatan, tpulsa, tmakan, bpjs, lembur, totalgaji, cicilan, alfa, ijin, sakit, totalbon, pph21, totalbayar, status) VALUES ('', '$dateNow', '$kodeabs', '$name', '$nip', 'keterangan','$gaji','$tjabatan','$tpulsa','$tmakan','$bpjs','0','$gaji','0','$potonganalfa','$potonganijin','$potongansakit','0','$PPH21Bulanini','$totalgaji','1')";
 
             $isSuccess = mysqli_query($conn, $queryGaji);
         }
 
         echo ($isSuccess) ? 3 : 1;
+    }
+} else if (isset($_POST['inputmenu'])) {
+
+    $menu = $_POST['nmenu'];
+    $url = $_POST['nurl'];
+
+    $cekdata = mysqli_query($conn, "SELECT * FROM user_menu WHERE menu = '$menu'");
+
+
+    if (mysqli_num_rows($cekdata) > 0) {
+        echo 1;
+    } else {
+        $cekurl = mysqli_query($conn, "SELECT * FROM user_menu WHERE url = '$url'");
+        if (mysqli_num_rows($cekurl) > 0) {
+            echo 2;
+        } else {
+            $query = "INSERT INTO user_menu SET 
+                       menu ='$menu',
+                       url  = '$url'
+                     ";
+            $masuk_data = mysqli_query($conn, $query);
+            if ($masuk_data) {
+                echo 4;
+            } else {
+
+                echo 3;
+            }
+        }
+    }
+} else if (isset($_POST['inputsubmenu'])) {
+
+    $mparent = $_POST['mparent'];
+    $menu = $_POST['nmenu'];
+    $url = $_POST['nurl'];
+
+
+    $cekdata = mysqli_query($conn, "SELECT * FROM user_sub_menu WHERE title = '$menu'");
+
+    if (mysqli_num_rows($cekdata) > 0) {
+        echo 1;
+    } else {
+        $cekurl = mysqli_query($conn, "SELECT * FROM user_sub_menu WHERE url = '$url'");
+        if (mysqli_num_rows($cekurl) > 0) {
+            echo 2;
+        } else {
+            $query = "INSERT INTO user_sub_menu 
+                        VALUES 
+                        ('','$mparent','$menu','$url','','','')
+                     ";
+            $masuk_data = mysqli_query($conn, $query);
+            if ($masuk_data) {
+                echo 4;
+            } else {
+                echo 3;
+            }
+        }
     }
 }

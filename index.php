@@ -57,27 +57,25 @@ if (isset($_SESSION["email"])) {
 
     <div class="wrapper-page">
         <div class="text-center">
-            <a href="index.html" class="logo"><span>PT. Skut <span></span> Refrigo Star</span></a>
+            <a href="index.html" class="logo"><span>PT. Citra <span></span> Mandiri</span></a>
         </div>
         <div class="m-t-40 card-box">
             <div class="text-center">
                 <!-- <h4 class="text-uppercase font-bold m-b-0">Sign In</h4> -->
-                <img src="assets/images/logoskut.png">
+                <img src="assets/images/logocitramandiri.png">
             </div>
             <div class="panel-body">
                 <form class="form-horizontal m-t-20" id="formmasuk">
                     <input type="hidden" id="login" name="login" value="login">
                     <div class="form-group ">
                         <div class="col-xs-12">
-                            <input class="form-control" type="email" required="" type="email" id="email" name="email"
-                                placeholder="Enter your email">
+                            <input class="form-control" type="email" required="" type="email" id="email" name="email" placeholder="Enter your email">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-xs-12">
-                            <input class="form-control" type="password" required="" type="password" id="password"
-                                name="password" placeholder="Enter your password">
+                            <input class="form-control" type="password" required="" type="password" id="password" name="password" placeholder="Enter your password">
                         </div>
                     </div>
 
@@ -95,8 +93,7 @@ if (isset($_SESSION["email"])) {
 
                     <div class="form-group text-center m-t-30">
                         <div class="col-xs-12">
-                            <button class="btn btn-custom btn-bordred btn-block waves-effect waves-light" type="submit"
-                                id="tombol-simpan" name="tombol-simpan">Log In</button>
+                            <button class="btn btn-custom btn-bordred btn-block waves-effect waves-light" type="submit" id="tombol-simpan" name="tombol-simpan">Log In</button>
                         </div>
                     </div>
 
@@ -123,7 +120,7 @@ if (isset($_SESSION["email"])) {
     <!-- end wrapper page -->
 
     <script>
-    var resizefunc = [];
+        var resizefunc = [];
     </script>
 
     <!-- jQuery  -->

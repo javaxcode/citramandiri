@@ -129,4 +129,36 @@ if (isset($_POST["updateproyek"])) {
 
     $isSuccess = mysqli_query($conn, $updateKaryawan);
     echo ($isSuccess) ? 3 : 1;
+} elseif (isset($_POST["updatemenu"])) {
+    $id = $_POST['updatemenu'];
+    $menu = $_POST['unama'];
+    $url = $_POST['uurl'];
+
+    // var_dump($url);
+    $idmenu = query("SELECT id FROM user_menu WHERE id ='$id'")[0];
+    $id = $idmenu['id'];
+
+    $query = "UPDATE user_menu SET
+                menu = '$menu',
+                url = '$url'
+        WHERE id = '$id'";
+
+    $masuk_data = mysqli_query($conn, $query);
+    if ($masuk_data) {
+        echo 2;
+    } else {
+        echo 1;
+    }
+} else if (isset($_POST['update-submenu'])) {
+    $nama = $_POST['unama'];
+    $url = $_POST['uurl'];
+    $id = $_POST['update-submenu'];
+
+    $query = "UPDATE user_sub_menu SET title = '$nama', url = '$url' WHERE id ='$id'";
+    $masuk_data = mysqli_query($conn, $query);
+    if ($masuk_data) {
+        echo 2;
+    } else {
+        echo 1;
+    }
 }

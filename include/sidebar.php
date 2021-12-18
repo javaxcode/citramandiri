@@ -51,6 +51,9 @@
                     <a href="../maintenance">
                         <li class="text-muted menu-title">Maintenance</li>
                     </a>
+                    <a href="../administrator">
+                        <li class="text-muted menu-title">Administrator</li>
+                    </a>
 
                 <?php elseif ($bagian == "Inventory") : ?>
                     <a href="../administration">
@@ -69,6 +72,9 @@
                     </a>
                     <a href="../maintenance">
                         <li class="text-muted menu-title">Maintenance</li>
+                    </a>
+                    <a href="../administrator">
+                        <li class="text-muted menu-title">Administrator</li>
                     </a>
 
                 <?php elseif ($bagian == "Project") : ?>
@@ -106,6 +112,9 @@
                     <a href="../maintenance">
                         <li class="text-muted menu-title">Maintenance</li>
                     </a>
+                    <a href="../administrator">
+                        <li class="text-muted menu-title">Administrator</li>
+                    </a>
                 <?php elseif ($bagian == "Maintenance") : ?>
                     <a href="../administration">
                         <li class="text-muted menu-title">Administration</li>
@@ -139,6 +148,9 @@
                             <li><a href="klien">Klien </a></li>
                         </ul>
                     </li>
+                    <a href="../administrator">
+                        <li class="text-muted menu-title">Administrator</li>
+                    </a>
 
                 <?php elseif ($bagian == "HRD") : ?>
 
@@ -184,6 +196,35 @@
                     <a href="../maintenance">
                         <li class="text-muted menu-title">Maintenance</li>
                     </a>
+                    <a href="../administrator">
+                        <li class="text-muted menu-title">Administrator</li>
+                    </a>
+
+                <?php elseif ($bagian == "Administrator") : ?>
+                    <a href="../administration">
+                        <li class="text-muted menu-title">Administration</li>
+                    </a>
+                    <a href="../inventory/supplier">
+                        <li class="text-muted menu-title">Inventory</li>
+                    </a>
+                    <a href="../hrd">
+                        <li class="text-muted menu-title">HRD & Payroll</li>
+                    </a>
+                    <a href="../project">
+                        <li class="text-muted menu-title">Project</li>
+                    </a>
+                    <a href="../maintenance">
+                        <li class="text-muted menu-title">Maintenance</li>
+                    </a>
+                    <li class="text-muted menu-title"><?= $bagian  ?></li>
+                    <li>
+                        <a href="../administrator/index" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i>
+                            <span> Menu </span> </a>
+                    </li>
+                    <li>
+                        <a href="../administrator/submenu" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i>
+                            <span> Sub Menu </span> </a>
+                    </li>
 
                 <?php endif; ?>
 

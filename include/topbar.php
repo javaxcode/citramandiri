@@ -4,7 +4,7 @@
     <!-- LOGO -->
     <div class="topbar-left">
         <!-- <a href="../index" class="logo"><span>Sk<span>ut</span></span><i class="zmdi zmdi-layers"></i></a> -->
-        <img src="../assets/images/logoskut.png" width="50%">
+        <img src="../assets/images/logocitramandiri.png" width="50%">
     </div>
 
     <!-- Button mobile view to collapse sidebar menu -->
@@ -27,14 +27,16 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <div class="page-title">
-                        <?php //foreach ($user as $row): ?>
+                        <?php //foreach ($user as $row): 
+                        ?>
                         <ul class="list-inline m-b-0">
                             <li>
                                 <h5 class="page-title"><a href=""><?= strtoupper($username); ?> </a> </h5>
-                                <!-- <h5 class="page-title"><a href="profil"><?=$ul;?> </a> </h5> -->
+                                <!-- <h5 class="page-title"><a href="profil"><?= $ul; ?> </a> </h5> -->
                             </li>
                         </ul>
-                        <?php ///endforeach;?>
+                        <?php ///endforeach;
+                        ?>
                     </div>
 
                 </li>

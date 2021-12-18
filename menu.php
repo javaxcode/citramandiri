@@ -10,7 +10,6 @@ if (!isset($_SESSION['email'])) {
     $user = query("SELECT * FROM admin WHERE email = '" . $_SESSION['email'] . "'")[0];
     $email = $user["email"];
     $username = $user["username"];
-    
 }
 
 ?>
@@ -61,9 +60,9 @@ if (!isset($_SESSION['email'])) {
                 <div class="text-center">
 
                     <!-- <h4 class="text-info m-t-0 font-600">Sejuk Karya Utama Teknik</h4> -->
-                    <img src="assets/images/logoskut.png">
+                    <img src="assets/images/logocitramandiri.png">
                     <br>
-                    <a href="index.html" class="logo"><span>PT. Skut <span></span> Refrigo Star</span></a>
+                    <a href="index.html" class="logo"><span>PT. Citra <span></span> Mandiri</span></a>
 
                 </div>
             </div>
@@ -75,8 +74,7 @@ if (!isset($_SESSION['email'])) {
                         <h3 class="panel-title text-center">Administration</h3>
                     </div>
                     <div class="panel-body text-center">
-                        <a href="administration/"><img src="assets/images/administrasi1.png" style="width: 125px;"
-                                class="img-circle"></a>
+                        <a href="administration/"><img src="assets/images/administrasi1.png" style="width: 125px;" class="img-circle"></a>
                     </div>
                 </div>
             </div><!-- end col -->
@@ -87,8 +85,7 @@ if (!isset($_SESSION['email'])) {
                         <h3 class="panel-title text-center">Project</h3>
                     </div>
                     <div class="panel-body text-center">
-                        <a href="project/"><img src="assets/images/coldstorage.png" style="width: 125px;"
-                                class="img-circle"></a>
+                        <a href="project/"><img src="assets/images/coldstorage.png" style="width: 125px;" class="img-circle"></a>
                     </div>
                 </div>
             </div><!-- end col -->
@@ -98,8 +95,7 @@ if (!isset($_SESSION['email'])) {
                         <h3 class="panel-title text-center">Maintenance</h3>
                     </div>
                     <div class="panel-body text-center">
-                        <a href="maintenance/"><img src="assets/images/maintenance.png" style="width: 125px;"
-                                class="img-circle"></a>
+                        <a href="maintenance/"><img src="assets/images/maintenance.png" style="width: 125px;" class="img-circle"></a>
                     </div>
                 </div>
             </div><!-- end col -->
@@ -110,8 +106,7 @@ if (!isset($_SESSION['email'])) {
                         <h3 class="panel-title text-center">Inventory</h3>
                     </div>
                     <div class="panel-body text-center">
-                        <a href="inventory/"><img src="assets/images/inventory1.png" style="width: 125px;"
-                                class="img-circle"></a>
+                        <a href="inventory/"><img src="assets/images/inventory1.png" style="width: 125px;" class="img-circle"></a>
                     </div>
                 </div>
             </div><!-- end col -->
@@ -123,8 +118,7 @@ if (!isset($_SESSION['email'])) {
                             <h3 class="panel-title text-center">Accounting</h3>
                         </div>
                         <div class="panel-body text-center">
-                            <a href="accounting/"><img src="assets/images/accounting.jpg" style="width: 125px;"
-                                    class="img-circle"></a>
+                            <a href="accounting/"><img src="assets/images/accounting.jpg" style="width: 125px;" class="img-circle"></a>
                         </div>
                     </div>
                 </div><!-- end col -->
@@ -136,8 +130,19 @@ if (!isset($_SESSION['email'])) {
                             <h3 class="panel-title text-center">HRD & Payroll</h3>
                         </div>
                         <div class="panel-body text-center">
-                            <a href="hrd/"><img src="assets/images/payroll1.jpg" style="width: 125px;"
-                                    class="img-circle"></a>
+                            <a href="hrd/"><img src="assets/images/payroll1.jpg" style="width: 125px;" class="img-circle"></a>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+
+
+                <div class="col-lg-4">
+                    <div class="panel panel-color panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center">Administrator</h3>
+                        </div>
+                        <div class="panel-body text-center">
+                            <a href="administrator/"><img src="assets/images/logoadministrator1.png" style="width: 125px;" class="img-circle"></a>
                         </div>
                     </div>
                 </div><!-- end col -->
@@ -158,7 +163,7 @@ if (!isset($_SESSION['email'])) {
 
 
     <script>
-    var resizefunc = [];
+        var resizefunc = [];
     </script>
 
     <!-- jQuery  -->
